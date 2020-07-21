@@ -59,7 +59,7 @@ public class AuthService {
 		user.setCreated(Instant.now());
 		user.setEnabled(false);
 		userRepository.save(user);
-		
+		log.info("User saved in signUp(RegisterUser registerUser): ",AuthService.class);
 		String token = generateVerificationToken(user);
 		mailSrvice.sendMail(new NotificationEmail(
 				"Please Activate your account",
