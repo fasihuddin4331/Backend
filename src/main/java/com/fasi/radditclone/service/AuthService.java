@@ -28,9 +28,11 @@ import com.fasi.radditclone.repository.VerificationTokenRepository;
 import com.fasi.radditclone.security.JwtProvider;
 
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
 @Service
 @AllArgsConstructor
+@Slf4j
 public class AuthService {
 
 	private final PasswordEncoder passwordencoder;
@@ -49,6 +51,7 @@ public class AuthService {
 	
 	@Transactional
 	public void signUp(RegisterUser registerUser) {
+		log.info("Entered in signUp(RegisterUser registerUser): ",AuthService.class);
 		User user=new User();
 		user.setEmail(registerUser.getEmail());
 		user.setUsername(registerUser.getUsername());
