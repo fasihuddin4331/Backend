@@ -67,6 +67,7 @@ public class AuthService {
 				"Thanks for Signup Activate your account by clicking below link :"
 				+ "http://localhost:9090/api/auth/accountVarification/"+token
 				));
+		log.info("Executed Succesfully signUp(RegisterUser registerUser): ",AuthService.class);
 	}
 
 	private String generateVerificationToken(User user) {
